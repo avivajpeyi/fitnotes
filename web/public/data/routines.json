@@ -1,0 +1,211 @@
+{
+  "_comment": "Master routine templates. Each exercise defines the rep range and set count used by scripts/compute_targets.py to calculate targets via double progression. 'lowerBackRisk' and 'preferredOver' encode the lower-back protection preference: cable/machine/chest-supported variants are favored over heavy standing/free-weight hinge or row movements.",
+  "schemaVersion": 1,
+  "routines": [
+    {
+      "id": "pull-day",
+      "name": "Pull Day",
+      "exercises": [
+        {
+          "name": "Lat Pulldown",
+          "category": "Back (Vertical Pull)",
+          "repRangeMin": 8,
+          "repRangeMax": 12,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 40,
+          "lowerBackRisk": "low"
+        },
+        {
+          "name": "Chest Supported Row",
+          "category": "Back (Horizontal Pull)",
+          "repRangeMin": 8,
+          "repRangeMax": 12,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 30,
+          "lowerBackRisk": "low",
+          "preferredOver": "Barbell Row"
+        },
+        {
+          "name": "Seated Cable Row",
+          "category": "Back (Horizontal Pull)",
+          "repRangeMin": 10,
+          "repRangeMax": 15,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 45,
+          "lowerBackRisk": "low",
+          "preferredOver": "Barbell Row"
+        },
+        {
+          "name": "Face Pull",
+          "category": "Rear Delt / Rotator Cuff",
+          "repRangeMin": 12,
+          "repRangeMax": 20,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 15,
+          "lowerBackRisk": "low"
+        },
+        {
+          "name": "Barbell Curl",
+          "category": "Biceps",
+          "repRangeMin": 8,
+          "repRangeMax": 12,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 20,
+          "lowerBackRisk": "low"
+        },
+        {
+          "name": "Hammer Curl",
+          "category": "Biceps",
+          "repRangeMin": 8,
+          "repRangeMax": 12,
+          "sets": 2,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 12,
+          "lowerBackRisk": "low"
+        }
+      ]
+    },
+    {
+      "id": "push-day",
+      "name": "Push Day",
+      "exercises": [
+        {
+          "name": "Flat Barbell Bench Press",
+          "category": "Chest",
+          "repRangeMin": 6,
+          "repRangeMax": 10,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 40,
+          "lowerBackRisk": "low"
+        },
+        {
+          "name": "Incline Dumbbell Press",
+          "category": "Chest",
+          "repRangeMin": 8,
+          "repRangeMax": 12,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 16,
+          "lowerBackRisk": "low"
+        },
+        {
+          "name": "Seated Machine Shoulder Press",
+          "category": "Shoulders",
+          "repRangeMin": 8,
+          "repRangeMax": 12,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 20,
+          "lowerBackRisk": "low",
+          "preferredOver": "Standing Overhead Press"
+        },
+        {
+          "name": "Cable Lateral Raise",
+          "category": "Shoulders",
+          "repRangeMin": 12,
+          "repRangeMax": 15,
+          "sets": 3,
+          "progressionIncrementKg": 1.25,
+          "startWeightKg": 5,
+          "lowerBackRisk": "low"
+        },
+        {
+          "name": "Triceps Rope Pushdown",
+          "category": "Triceps",
+          "repRangeMin": 10,
+          "repRangeMax": 15,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 20,
+          "lowerBackRisk": "low"
+        },
+        {
+          "name": "Overhead Cable Triceps Extension",
+          "category": "Triceps",
+          "repRangeMin": 10,
+          "repRangeMax": 15,
+          "sets": 2,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 15,
+          "lowerBackRisk": "low"
+        }
+      ]
+    },
+    {
+      "id": "leg-day",
+      "name": "Leg Day",
+      "exercises": [
+        {
+          "name": "Leg Press",
+          "category": "Quads",
+          "repRangeMin": 8,
+          "repRangeMax": 12,
+          "sets": 3,
+          "progressionIncrementKg": 5,
+          "startWeightKg": 80,
+          "lowerBackRisk": "low",
+          "preferredOver": "Back Squat"
+        },
+        {
+          "name": "Hack Squat (Machine)",
+          "category": "Quads",
+          "repRangeMin": 8,
+          "repRangeMax": 12,
+          "sets": 3,
+          "progressionIncrementKg": 5,
+          "startWeightKg": 40,
+          "lowerBackRisk": "low",
+          "preferredOver": "Back Squat"
+        },
+        {
+          "name": "Seated Leg Curl",
+          "category": "Hamstrings",
+          "repRangeMin": 10,
+          "repRangeMax": 15,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 30,
+          "lowerBackRisk": "low",
+          "preferredOver": "Romanian Deadlift"
+        },
+        {
+          "name": "Leg Extension",
+          "category": "Quads",
+          "repRangeMin": 10,
+          "repRangeMax": 15,
+          "sets": 3,
+          "progressionIncrementKg": 2.5,
+          "startWeightKg": 30,
+          "lowerBackRisk": "low"
+        },
+        {
+          "name": "Chest-Supported Hip Thrust Machine",
+          "category": "Glutes",
+          "repRangeMin": 8,
+          "repRangeMax": 12,
+          "sets": 3,
+          "progressionIncrementKg": 5,
+          "startWeightKg": 40,
+          "lowerBackRisk": "low",
+          "preferredOver": "Barbell Hip Thrust"
+        },
+        {
+          "name": "Standing Calf Raise (Machine)",
+          "category": "Calves",
+          "repRangeMin": 10,
+          "repRangeMax": 15,
+          "sets": 3,
+          "progressionIncrementKg": 5,
+          "startWeightKg": 40,
+          "lowerBackRisk": "low"
+        }
+      ]
+    }
+  ]
+}
