@@ -3,6 +3,14 @@ import { notFound } from "next/navigation";
 import { readActiveTargets } from "@/lib/data-server";
 import ExerciseLogger from "@/components/ExerciseLogger";
 
+// Static export needs every routine id enumerated at build time — there's
+// no server at runtime to resolve arbitrary [routineId] values on GitHub Pages.
+export async function generateStaticParams() {
+  const { routines } = await readActiveTargets();
+  return routines.map((r) => ({ routineId: r.id }));
+}
+export const dynamicParams = false;
+
 export default async function SessionPage({
   params,
 }: {

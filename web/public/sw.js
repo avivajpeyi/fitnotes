@@ -1,5 +1,7 @@
 const CACHE_NAME = "fitnotes-hub-v1";
-const APP_SHELL = ["/", "/history", "/manifest.webmanifest"];
+// Relative to this script's own URL, so these resolve correctly whether the
+// app is served from "/" or from a GitHub Pages basePath like "/fitnotes/".
+const APP_SHELL = ["./", "./history/", "./manifest.webmanifest"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -24,7 +26,7 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
 
   const url = new URL(request.url);
-  if (url.pathname.startsWith("/data/")) {
+  if (url.pathname.includes("/data/")) {
     event.respondWith(
       fetch(request)
         .then((res) => {

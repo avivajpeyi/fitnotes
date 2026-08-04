@@ -154,3 +154,25 @@ After exporting a backup CSV/JSON from the app, it's fine to commit it under
 in git — the pipeline itself only reads from the FitNotes CSV export, so
 committing app backups is optional record-keeping, not required for targets
 to compute correctly.
+
+### Deploying to GitHub Pages
+
+`web/` builds as a static export (`output: "export"` in `next.config.ts`) so
+it can be hosted directly from GitHub Pages — no server, no runtime API
+routes. `.github/workflows/deploy-pages.yml` builds and deploys it
+automatically on every push to `main` that touches `web/**` or the data
+files, publishing to `https://<owner>.github.io/fitnotes/`.
+
+One-time setup: in the repo's **Settings → Pages**, set "Source" to **GitHub
+Actions** (the workflow won't publish anything until this is set).
+
+Because the routines/targets are read from the filesystem at build time
+(`lib/data-server.ts`), the deployed site is a snapshot — it only reflects
+whatever was in `data/active_targets.json` at the last build. After running
+`python3 scripts/compute_targets.py` with fresh sessions, push to `main` (or
+run the workflow manually) to redeploy with the updated targets.
+
+The build sets `NEXT_PUBLIC_BASE_PATH=/fitnotes` (the repo name) so all
+routes, the manifest, and the service worker resolve correctly under the
+GitHub Pages subpath. Building locally with `npm run build` (no env var) uses
+no base path, matching `npm run dev`/`npm start`.
