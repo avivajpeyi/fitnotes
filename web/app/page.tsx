@@ -12,6 +12,10 @@ export default async function Home() {
         <p className="mt-1 text-sm text-zinc-400">Pick today&apos;s routine.</p>
       </header>
 
+      <Link href="/library" className="rounded-xl border border-blue-700 px-4 py-4 text-blue-200">
+        Explore the Workout Library →
+      </Link>
+
       <div className="flex flex-col gap-3">
         {routines.map((r) => (
           <RoutineCard key={r.id} id={r.id} name={r.name} exerciseCount={r.exercises.length} />

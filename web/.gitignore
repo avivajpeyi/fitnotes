@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Static mirror generated from the canonical import schema before build.
+/public/catalog/schema-v1.json
