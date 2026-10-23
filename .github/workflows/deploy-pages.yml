@@ -7,6 +7,8 @@ on:
       - "web/**"
       - "data/routines.json"
       - "data/active_targets.json"
+      - "data/programs/**"
+      - "scripts/*catalog*"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -25,6 +27,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate shared catalog schema and content
+        run: |
+          pip install jsonschema==4.26.0
+          python scripts/validate_catalog.py
+          python scripts/test_catalog_validation.py
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -40,6 +51,12 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_PATH: /fitnotes
         run: npm run build
+
+      - name: Check public catalog offline caching
+        run: node scripts/test_catalog_service_worker.mjs
+
+      - name: Verify exported JSON and schema bytes
+        run: python scripts/validate_catalog.py --export
 
       - uses: actions/configure-pages@v5
 
