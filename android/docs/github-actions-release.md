@@ -1,3 +1,7 @@
+# Legacy release instructions
+
+Android development and publishing have moved to [fit-logs/fitlogs](https://github.com/fit-logs/fitlogs). Use the [current release instructions](https://github.com/fit-logs/fitlogs/blob/main/android/docs/github-actions-release.md). The workflow below is retained as historical documentation and publishing in this repository is disabled.
+
 # Automated Android CI and beta releases
 
 ## Workflows
