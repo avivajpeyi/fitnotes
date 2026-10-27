@@ -92,7 +92,7 @@ jobs:
         with:
           packages: 'platform-tools'
       - name: Install required Android SDK
-        run: sdkmanager --install 'platforms;android-37' 'build-tools;36.0.0' 'platform-tools'
+        run: sdkmanager --channel=3 --install 'platforms;android-37.0' 'build-tools;36.0.0' 'platform-tools'
       - name: Restore original signing keystore in temporary runner storage
         env:
           FITNOTES_KEYSTORE_BASE64: ${{ secrets.FITNOTES_KEYSTORE_BASE64 }}
